@@ -1,6 +1,28 @@
 *{
     margin: 0;
     padding: 0;
+    text-align: center;
+}
+
+#title{
+    padding-top: 12px;
+    font-size: 50px;
+    color: white;
+}
+
+#reset-btn{
+    padding: 10px;
+    margin: 15px;
+    border-radius: 8px;
+    background-color: white;
+}
+
+#reset-btn:active{
+    color: rgb(16, 67, 233);
+}
+
+body{
+    background-color: rgb(16, 67, 233);
 }
 
 .board{

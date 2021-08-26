@@ -16,3 +16,9 @@ boxes.forEach(box => {
         event.target.style.backgroundColor = "orange";
       });
 });
+
+const resetBtn = document.querySelector('#reset-btn');
+//When the reset button is clicked, the page reloads.
+resetBtn.addEventListener("click", function(){
+    location.reload();
+});
