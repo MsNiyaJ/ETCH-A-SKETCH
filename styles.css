@@ -26,14 +26,16 @@ body{
 }
 
 .board{
+    width: 960px;
+    height: 80vh;
+    margin-left: auto;
+    margin-right: auto;
     display: grid;
     grid-template-rows: repeat(16, 1fr);
     grid-template-columns: repeat(16, 1fr);
 }
 
 .box{
-    width: 50px;
-    height: 50px;
     border: grey 1px solid;
     background-color: white;
 }
