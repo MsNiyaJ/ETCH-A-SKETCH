@@ -24,22 +24,24 @@ function mouseOverEvent(){
     const boxes = document.querySelectorAll('.box');
     boxes.forEach(box => {
         box.addEventListener("mouseenter", function( event ) {
-            
             // the mouseenter target will become a random color if none was assigned
             if(box.style.backgroundColor === ''){
                 event.target.style.backgroundColor = getRandomColor();
+                console.log(event.target.style.backgroundColor);
             }
+            // else 
+            //     decreaseLightness(event.target);
         });
     });
 }
 
-//Returns a string that represents a random hsl color
+//Returns a string that represents a random rgb color
 function getRandomColor() {
     let color;
-    let hue = getRandomInt(1, 360);         //number on the color wheel
-    let saturation = getRandomInt(50, 100); //percentage from grey to full color
-    let lightness = getRandomInt(25, 90);   //lightness from black to white
-    color = `hsl(${hue}, ${saturation}%, ${lightness}%)`;
+    let red = getRandomInt(0, 255);     //intensity of red
+    let green = getRandomInt(0, 255);   //intensity of green
+    let blue = getRandomInt(0, 255);    //intensity of blue
+    color = `rgb(${red}, ${green}, ${blue})`;
     return color;
 }
 
