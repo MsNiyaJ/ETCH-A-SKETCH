@@ -25,14 +25,26 @@ function mouseOverEvent(){
     boxes.forEach(box => {
         box.addEventListener("mouseenter", function( event ) {
             // the mouseenter target will become a random color if none was assigned
-            if(box.style.backgroundColor === ''){
+            if(box.style.backgroundColor === '')
                 event.target.style.backgroundColor = getRandomColor();
-                console.log(event.target.style.backgroundColor);
-            }
-            // else 
-            //     decreaseLightness(event.target);
+            else 
+                decreaseLightness(event.target);
         });
     });
+}
+
+//Decreases the box's rgb value by 10% until it is black
+function decreaseLightness(box){
+    const NUMERIC_REGEXP = /\d+/g;  // Regex for numbers
+    const rgbValue = box.style.backgroundColor.match(NUMERIC_REGEXP); //Stores each number from the rgb value into an array
+    let red = rgbValue[0];
+    let green = rgbValue[1];
+    let blue = rgbValue[2]; 
+
+    //Decreases the rgb value by 10 until we get rgb(0, 0, 0), in otherwords, black
+    if(red >= 0 || blue >= 0 || green >= 0){
+        box.style.backgroundColor = `rgb(${red - 10}, ${green - 10}, ${blue - 10})`;
+    }
 }
 
 //Returns a string that represents a random rgb color
