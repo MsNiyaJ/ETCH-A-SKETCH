@@ -21,6 +21,12 @@
     color: rgb(16, 67, 233);
 }
 
+/* Buttons get this class when they are toggled */
+.down{
+    color: blue;
+    border: solid 2px purple;
+}
+
 body{
     background-color: rgb(16, 67, 233);
 }

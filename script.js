@@ -2,6 +2,8 @@ const board = document.querySelector('.board');
 createNewBoxes(16, 16); //Create 16x16 board when the page starts
 setRowsAndCols(16, 16); //Sets the amount of rows and columns in the board
 mouseOverEvent();       //Gives the board a mouseover effect
+let toggleBlack = false;       // Boolean var for if the black button was clicked
+let toggleEraser = false;      // Boolean var for if the eraser button was clicked
 
 //Creates the number of boxes needed to fill the dimensions of the board
 function createNewBoxes(rows, cols){
@@ -9,6 +11,7 @@ function createNewBoxes(rows, cols){
     for(let i = 0; i < dimensions; i++){
         let box = document.createElement('div');
         box.classList.add('box');
+        box.style.backgroundColor = 'white';
         board.appendChild(box);
     }
 }
@@ -23,12 +26,15 @@ function setRowsAndCols(rows, cols){
 function mouseOverEvent(){
     const boxes = document.querySelectorAll('.box');
     boxes.forEach(box => {
-        box.addEventListener("mouseenter", function( event ) {
-            // the mouseenter target will become a random color if none was assigned
-            if(box.style.backgroundColor === '')
-                event.target.style.backgroundColor = getRandomColor();
-            else 
-                decreaseLightness(event.target);
+        box.addEventListener("mouseenter", function() {
+            if(toggleBlack === true){
+                box.style.backgroundColor = 'black';
+            }
+            else if(box.style.backgroundColor === 'black' || 
+                    box.style.backgroundColor === 'white'){
+                box.style.backgroundColor = getRandomColor();
+            }else
+                decreaseLightness(box);
         });
     });
 }
@@ -61,6 +67,16 @@ function getRandomColor() {
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
+
+const toggleBlackBtn = document.querySelector('#color-picker-btn');
+toggleBlackBtn.addEventListener("click", function(){
+    toggleBlackBtn.classList.toggle('down');        //Toggle the class down
+    
+    if(toggleBlackBtn.classList.contains('down'))
+        toggleBlack = true;             
+    else
+        toggleBlack = false;
+});
 
 const resetBtn = document.querySelector('#reset-btn');
 //When the reset button is clicked, create a new board.
