@@ -70,7 +70,16 @@ resetBtn.addEventListener("click", function(){
 
 function createNewBoard(){
     let rows = getRows();
+    
+    //Do not create a new board if rows or cols is null
+    if (rows === null)
+        return;
+    
     let cols = getCols();
+
+    if(cols === null)
+        return;
+    
     removeAllBoxes();
     createNewBoxes(rows, cols);
     setRowsAndCols(rows, cols);
@@ -83,6 +92,8 @@ function getRows(){
         let rows = prompt('How many rows? (Enter a number less than 100)', 16);
         if(rows > 0 && rows < 101)
             return rows;
+        else if(rows === null)      //Return null when the user cancels the prompt
+            return null;
     }
 }
 
@@ -92,6 +103,8 @@ function getCols(){
         let cols = prompt('How many columns? (Enter a number less than 100)', 16);
         if(cols > 0 && cols < 101)
             return cols;
+        else if(cols === null)      //Return null when the user cancels the prompt
+            return null;
     }
 }
 
