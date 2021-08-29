@@ -26,6 +26,7 @@ body{
 }
 
 .board{
+    background-color: #fff;
     width: 960px;
     height: 80vh;
     margin-left: auto;
@@ -34,7 +35,6 @@ body{
 }
 
 .box{
-    border: grey 1px solid;
     background-color: white;
     opacity: 0.8;
 }

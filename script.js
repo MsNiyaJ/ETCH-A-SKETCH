@@ -36,7 +36,7 @@ function mouseOverEvent(){
 //Decreases the box's rgb value by 10% until it is black
 function decreaseLightness(box){
     const NUMERIC_REGEXP = /\d+/g;  // Regex for numbers
-    const rgbValue = box.style.backgroundColor.match(NUMERIC_REGEXP); //Stores each number from the rgb value into an array
+    let rgbValue = box.style.backgroundColor.match(NUMERIC_REGEXP); //Stores each number from the rgb value into an array
     let red = rgbValue[0];
     let green = rgbValue[1];
     let blue = rgbValue[2]; 
