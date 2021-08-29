@@ -10,14 +10,14 @@
     color: white;
 }
 
-#reset-btn{
+#color-picker-btn, #reset-btn, #eraser-btn{
     padding: 10px;
     margin: 15px;
     border-radius: 8px;
     background-color: white;
 }
 
-#reset-btn:active{
+#color-picker-btn:active, #reset-btn:active, #eraser-btn:active{
     color: rgb(16, 67, 233);
 }
 
@@ -27,14 +27,15 @@ body{
 
 .board{
     background-color: #fff;
-    width: 960px;
-    height: 80vh;
+    width: 500px;
+    height: 500px;
     margin-left: auto;
     margin-right: auto;
     display: grid;
 }
 
 .box{
+    border: rgb(235, 235, 235) 1px solid;
     background-color: white;
     opacity: 0.8;
 }
