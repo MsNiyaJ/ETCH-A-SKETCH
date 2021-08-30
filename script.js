@@ -30,6 +30,9 @@ function mouseOverEvent(){
             if(toggleBlack === true){
                 box.style.backgroundColor = 'black';
             }
+            else if(toggleEraser === true){
+                box.style.backgroundColor = 'white';
+            }
             else if(box.style.backgroundColor === 'black' || 
                     box.style.backgroundColor === 'white'){
                 box.style.backgroundColor = getRandomColor();
