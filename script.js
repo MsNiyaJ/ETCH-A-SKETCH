@@ -68,12 +68,37 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
+const eraserBtn = document.querySelector('#eraser-btn');
 const toggleBlackBtn = document.querySelector('#color-picker-btn');
-toggleBlackBtn.addEventListener("click", function(){
-    toggleBlackBtn.classList.toggle('down');        //Toggle the class down
+
+eraserBtn.addEventListener("click", function(){
+    eraserBtn.classList.toggle('down');        //Changes the style of the button on click
     
-    if(toggleBlackBtn.classList.contains('down'))
+    if(eraserBtn.classList.contains('down')){
+        
+        //Switch the toggle black button off when eraser button is on
+        if(toggleBlackBtn.classList.contains('down')){
+            toggleBlack = false;
+            toggleBlackBtn.classList.toggle('down');
+        }
+        toggleEraser = true;             
+    }
+    else
+        toggleEraser = false;
+});
+
+toggleBlackBtn.addEventListener("click", function(){
+    toggleBlackBtn.classList.toggle('down');        //Changes the style of the button on click
+    
+    if(toggleBlackBtn.classList.contains('down')){
+        
+        //Switch the eraser button off when toggle black is on
+        if(eraserBtn.classList.contains('down')){
+            toggleEraser = false;
+            eraserBtn.classList.toggle('down');
+        }
         toggleBlack = true;             
+    }
     else
         toggleBlack = false;
 });
