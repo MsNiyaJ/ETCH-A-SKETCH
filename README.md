@@ -4,7 +4,7 @@ Project: https://www.theodinproject.com/paths/foundations/courses/foundations/le
 A browser version of something between a sketchpad and an Etch-A-Sketch.
 
 Hover your cursor over a square to draw something onto the pad.
-Initially rainbow colors will be displayed in each box.
+Initially rainbow colors will be displayed in each box. If you hover over the rainbow colors they will darken.
 You can click on the 'TOGGLE BLACK' button to have black display on hover.
 You can click on the 'ERASER' button to have white display in each box.
 The 'RESET' button allows you to change the size of the drawing pad.
